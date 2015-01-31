@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="RootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io5-Lb-N0H" customClass="KAProgressLabel">
+                                <rect key="frame" x="200" y="95" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="PnV-fZ-Ke1"/>
+                                    <constraint firstAttribute="width" constant="200" id="TcR-I4-qTc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Dfg-rR-xhW">
+                                <rect key="frame" x="34" y="595" width="532" height="31"/>
+                                <connections>
+                                    <action selector="slider:" destination="vXZ-lx-hvc" eventType="valueChanged" id="0hB-Mo-pNF"/>
+                                </connections>
+                            </slider>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eendracht_maakt_macht.png" translatesAutoresizingMaskIntoConstraints="NO" id="MF0-CP-Afk">
+                                <rect key="frame" x="26" y="408" width="548" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="mRx-Mg-gf4"/>
+                                    <constraint firstAttribute="width" constant="162" id="txL-z2-Fvn"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="txL-z2-Fvn"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="564.987" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62N-ed-Jap">
+                                <rect key="frame" x="263" y="456" width="75" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hue_large.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vod-0N-Ino">
+                                <rect key="frame" x="234" y="459" width="19" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Aag-Y6-L7d"/>
+                                    <constraint firstAttribute="width" constant="19" id="AzZ-BA-u3I"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.02169921121" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="62N-ed-Jap" firstAttribute="leading" secondItem="Vod-0N-Ino" secondAttribute="trailing" constant="10" id="4Rz-PX-hsi"/>
+                            <constraint firstItem="62N-ed-Jap" firstAttribute="top" secondItem="MF0-CP-Afk" secondAttribute="bottom" constant="23" id="4Tr-HB-oI3"/>
+                            <constraint firstItem="MF0-CP-Afk" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="113" id="5gf-Cp-xlr"/>
+                            <constraint firstItem="MF0-CP-Afk" firstAttribute="top" secondItem="Io5-Lb-N0H" secondAttribute="bottom" constant="113" id="5sg-1h-Hj7"/>
+                            <constraint firstItem="Dfg-rR-xhW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="An5-6y-u9F"/>
+                            <constraint firstAttribute="centerY" secondItem="MF0-CP-Afk" secondAttribute="centerY" id="Ed2-Hf-yUE"/>
+                            <constraint firstItem="Dfg-rR-xhW" firstAttribute="top" secondItem="Io5-Lb-N0H" secondAttribute="bottom" constant="300" id="FvG-h2-fb1"/>
+                            <constraint firstAttribute="centerX" secondItem="Dfg-rR-xhW" secondAttribute="centerX" id="HR0-v1-tED"/>
+                            <constraint firstAttribute="centerY" secondItem="62N-ed-Jap" secondAttribute="centerY" id="MiR-Fs-0fh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MF0-CP-Afk" secondAttribute="trailing" constant="10" id="N0f-8e-xyu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dfg-rR-xhW" secondAttribute="trailing" constant="20" id="SXH-wf-0Ud"/>
+                            <constraint firstItem="MF0-CP-Afk" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="203" id="VsN-4s-Ao6"/>
+                            <constraint firstItem="Io5-Lb-N0H" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="75" id="a79-dX-KNZ"/>
+                            <constraint firstItem="Vod-0N-Ino" firstAttribute="top" secondItem="MF0-CP-Afk" secondAttribute="bottom" constant="20" id="cW6-ut-grz"/>
+                            <constraint firstItem="Vod-0N-Ino" firstAttribute="top" secondItem="MF0-CP-Afk" secondAttribute="bottom" constant="26" id="jGX-tm-xTH"/>
+                            <constraint firstAttribute="centerY" secondItem="MF0-CP-Afk" secondAttribute="centerY" id="jPb-Qo-eGz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MF0-CP-Afk" secondAttribute="trailing" constant="203" id="kkj-Lx-0IV"/>
+                            <constraint firstAttribute="centerX" secondItem="62N-ed-Jap" secondAttribute="centerX" id="nr0-95-hZe"/>
+                            <constraint firstItem="MF0-CP-Afk" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="xVu-Ao-dUE"/>
+                            <constraint firstAttribute="centerX" secondItem="Io5-Lb-N0H" secondAttribute="centerX" id="yil-3i-PAC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5gf-Cp-xlr"/>
+                                <exclude reference="Ed2-Hf-yUE"/>
+                                <exclude reference="VsN-4s-Ao6"/>
+                                <exclude reference="jPb-Qo-eGz"/>
+                                <exclude reference="kkj-Lx-0IV"/>
+                                <exclude reference="cW6-ut-grz"/>
+                                <exclude reference="MiR-Fs-0fh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="countLabel" destination="62N-ed-Jap" id="2uQ-XT-wOc"/>
+                        <outlet property="progress" destination="Io5-Lb-N0H" id="q8z-7H-wmt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="183"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="eendracht_maakt_macht.png" width="161" height="24"/>
+        <image name="hue_large.png" width="19" height="31"/>
+    </resources>
+</document>
