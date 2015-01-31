@@ -27,7 +27,7 @@ function receive(buffer) {
 }
 
 setInterval(function() {
-	var bufferContents = buffer,
+	var bufferContents = buffer.slice(0),
 		avg;
 
 	if (!bufferContents.length) return;
