@@ -11,12 +11,17 @@
 
 #import "FontHelper.h"
 #import "BackgroundGradient.h"
+#import "SocketController.h"
 
-@interface RootViewController : UIViewController
+
+
+@interface RootViewController : UIViewController <SocketControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet KAProgressLabel *progress;
 - (IBAction)slider:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
+@property (nonatomic, strong) SocketController *socketController;
+
 
 @end
 

@@ -18,7 +18,7 @@ NSOutputStream *outputStream;
 
 - (id)init
 {
-
+    
     CFStreamCreatePairWithSocketToHost(NULL, (CFStringRef)SOCKET_URL, SOCKET_PORT, &readStream, &writeStream);
     inputStream = (NSInputStream *)CFBridgingRelease(readStream);
     outputStream = (NSOutputStream *)CFBridgingRelease(writeStream);
@@ -94,8 +94,10 @@ NSOutputStream *outputStream;
 
 - (void)messageReceived:(NSString *)message
 {
-    
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(message:)])
+    {
+        [self.delegate message:message];
+    }
 }
 
 @end

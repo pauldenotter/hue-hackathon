@@ -13,6 +13,7 @@
 		212D76501A7D6ED500A057B5 /* hue_large@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 212D764F1A7D6ED500A057B5 /* hue_large@2x.png */; };
 		212D76531A7D6FF300A057B5 /* Gotham-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 212D76521A7D6FF300A057B5 /* Gotham-Thin.otf */; };
 		212D76581A7D704500A057B5 /* FontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 212D76571A7D704500A057B5 /* FontHelper.m */; };
+		212D76601A7D777400A057B5 /* SocketController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212D765F1A7D777400A057B5 /* SocketController.m */; };
 		21E648391A7D2C0C00EAC2A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E648381A7D2C0C00EAC2A8 /* main.m */; };
 		21E6483C1A7D2C0C00EAC2A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6483B1A7D2C0C00EAC2A8 /* AppDelegate.m */; };
 		21E6483F1A7D2C0C00EAC2A8 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6483E1A7D2C0C00EAC2A8 /* RootViewController.m */; };
@@ -43,6 +44,8 @@
 		212D76521A7D6FF300A057B5 /* Gotham-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Thin.otf"; sourceTree = "<group>"; };
 		212D76561A7D704500A057B5 /* FontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FontHelper.h; path = Helpers/FontHelper/FontHelper.h; sourceTree = "<group>"; };
 		212D76571A7D704500A057B5 /* FontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FontHelper.m; path = Helpers/FontHelper/FontHelper.m; sourceTree = "<group>"; };
+		212D765E1A7D777400A057B5 /* SocketController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketController.h; sourceTree = "<group>"; };
+		212D765F1A7D777400A057B5 /* SocketController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketController.m; sourceTree = "<group>"; };
 		21E648331A7D2C0B00EAC2A8 /* PSVatHOME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSVatHOME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E648371A7D2C0B00EAC2A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21E648381A7D2C0C00EAC2A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -126,6 +129,15 @@
 			name = FontHelper;
 			sourceTree = "<group>";
 		};
+		212D765D1A7D777400A057B5 /* SocketController */ = {
+			isa = PBXGroup;
+			children = (
+				212D765E1A7D777400A057B5 /* SocketController.h */,
+				212D765F1A7D777400A057B5 /* SocketController.m */,
+			);
+			path = SocketController;
+			sourceTree = "<group>";
+		};
 		21E6482A1A7D2C0B00EAC2A8 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +159,7 @@
 		21E648351A7D2C0B00EAC2A8 /* PSVatHOME */ = {
 			isa = PBXGroup;
 			children = (
+				212D765D1A7D777400A057B5 /* SocketController */,
 				212D76541A7D702C00A057B5 /* Helpers */,
 				212D76461A7D3EB800A057B5 /* BackgroundGradient */,
 				21E6485C1A7D302B00EAC2A8 /* Frameworks */,
@@ -315,6 +328,7 @@
 			files = (
 				21E648631A7D302B00EAC2A8 /* TPPropertyAnimation.m in Sources */,
 				21E6483F1A7D2C0C00EAC2A8 /* RootViewController.m in Sources */,
+				212D76601A7D777400A057B5 /* SocketController.m in Sources */,
 				21E648621A7D302B00EAC2A8 /* KAProgressLabel.m in Sources */,
 				212D76491A7D3ED700A057B5 /* BackgroundGradient.m in Sources */,
 				212D76581A7D704500A057B5 /* FontHelper.m in Sources */,

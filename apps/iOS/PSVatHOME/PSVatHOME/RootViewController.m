@@ -34,7 +34,8 @@
     [self setBackgroundColorRed:228 green:61 blue:50 ];
     
     [self.countLabel setFont:[FontHelper regularFontOfSize:42]];
-
+    
+    self.socketController = [[SocketController alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Bckground
 - (void)setBackgroundColorRed:(float)red green:(float)green blue:(float)blue
 {
     CAGradientLayer *backgroundLayer = [BackgroundGradient createGradientStartColor:[UIColor colorWithRed:red/255.f green:green/255.f blue:blue/255.f alpha:1.0] endColor:[UIColor colorWithRed:red/255.f green:green/255.f blue:blue/255.f alpha:1.0]];
@@ -52,8 +54,18 @@
     [self.view.layer insertSublayer:backgroundLayer atIndex:0];
 }
 
+
+#pragma mark IBActions
 - (IBAction)slider:(UISlider *)sender
 {
     [self.progress setProgress:sender.value];
 }
+
+#pragma mark SocketControllerDelegate
+
+- (void)message:(NSString *)message
+{
+    
+}
+
 @end

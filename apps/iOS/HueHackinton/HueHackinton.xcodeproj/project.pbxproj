@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		212D765C1A7D753600A057B5 /* SocketController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212D765B1A7D753600A057B5 /* SocketController.m */; };
 		21E647FE1A7CFD9B00EAC2A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E647FD1A7CFD9B00EAC2A8 /* main.m */; };
 		21E648011A7CFD9B00EAC2A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E648001A7CFD9B00EAC2A8 /* AppDelegate.m */; };
 		21E648041A7CFD9B00EAC2A8 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E648031A7CFD9B00EAC2A8 /* RootViewController.m */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		212D765A1A7D753600A057B5 /* SocketController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketController.h; sourceTree = "<group>"; };
+		212D765B1A7D753600A057B5 /* SocketController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketController.m; sourceTree = "<group>"; };
 		21E647F81A7CFD9B00EAC2A8 /* HueHackinton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueHackinton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E647FC1A7CFD9B00EAC2A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21E647FD1A7CFD9B00EAC2A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -67,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		212D76591A7D753600A057B5 /* SocketController */ = {
+			isa = PBXGroup;
+			children = (
+				212D765A1A7D753600A057B5 /* SocketController.h */,
+				212D765B1A7D753600A057B5 /* SocketController.m */,
+			);
+			path = SocketController;
+			sourceTree = "<group>";
+		};
 		21E647EF1A7CFD9B00EAC2A8 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +100,7 @@
 		21E647FA1A7CFD9B00EAC2A8 /* HueHackinton */ = {
 			isa = PBXGroup;
 			children = (
+				212D76591A7D753600A057B5 /* SocketController */,
 				21E648261A7D0DBC00EAC2A8 /* SocketController */,
 				21E648211A7CFEF400EAC2A8 /* AudioController */,
 				21E647FF1A7CFD9B00EAC2A8 /* AppDelegate.h */,
@@ -249,6 +262,7 @@
 			files = (
 				21E648041A7CFD9B00EAC2A8 /* RootViewController.m in Sources */,
 				21E648011A7CFD9B00EAC2A8 /* AppDelegate.m in Sources */,
+				212D765C1A7D753600A057B5 /* SocketController.m in Sources */,
 				21E648241A7CFF1400EAC2A8 /* AudioController.m in Sources */,
 				21E647FE1A7CFD9B00EAC2A8 /* main.m in Sources */,
 				21E648291A7D0DD900EAC2A8 /* SocketController.m in Sources */,
@@ -444,6 +458,7 @@
 				21E6481D1A7CFD9C00EAC2A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21E6481E1A7CFD9C00EAC2A8 /* Build configuration list for PBXNativeTarget "HueHackintonTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +467,7 @@
 				21E648201A7CFD9C00EAC2A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
