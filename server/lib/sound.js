@@ -1,18 +1,25 @@
 var clients = [],
-	buffer = [];
+	buffer = [],
+	MongoClient = require('mongodb').MongoClient,
+	collection;
 
 module.exports = function(client) {
-	console.log('Client connected ');
-	clients.push(client);
+	MongoClient.connect('mongodb://127.0.0.1/hackathon', function(err, db) {
+		if (err) throw err;
 
-	client.on('end', function() {
-		console.log('Client disconnected');
-		clients.splice(clients.indexOf(client), 1);
+		collection = db.collection('psvmatch');
+
+		console.log('Client connected ');
+		clients.push(client);
+
+		client.on('end', function() {
+			console.log('Client disconnected');
+			clients.splice(clients.indexOf(client), 1);
+		});
+
+		client.on('data', receive);
+		client.write('Hackathoooon\r\n');
 	});
-
-	client.on('data', receive);
-
-	client.write('Hackathoooon\r\n');
 };
 
 function receive(incomingBuffer) {
@@ -24,6 +31,9 @@ function receive(incomingBuffer) {
 		};
 
 	buffer.push(data);
+	collection.insert(data, function(err, docs) {
+		if (err) console.error(err);
+	});
 }
 
 function sendData(data) {
