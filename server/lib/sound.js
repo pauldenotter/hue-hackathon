@@ -29,6 +29,9 @@ function receive(buffer) {
 setInterval(function() {
 	var bufferContents = buffer,
 		avg;
+
+	if (!bufferContents.length) return;
+
 	buffer = [];
 
 	avg = bufferContents.map(function(data) {
