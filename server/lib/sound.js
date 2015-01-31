@@ -7,7 +7,7 @@ module.exports = function(client) {
 
 	client.on('end', function() {
 		console.log('Client disconnected');
-		clients.slice(clients.indexOf(client), 1);
+		clients.splice(clients.indexOf(client), 1);
 	});
 
 	client.on('data', receive);
