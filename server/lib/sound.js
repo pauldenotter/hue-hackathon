@@ -15,15 +15,15 @@ module.exports = function(client) {
 	client.write('Hackathoooon\r\n');
 };
 
-function receive(buffer) {
-	var split = buffer.toString().split(';'),
+function receive(incomingBuffer) {
+	var split = incomingBuffer.toString().split(';'),
 		data = {
 			ts: new Date(),
 			avg: parseFloat(split[0], 10),
 			peak: parseFloat(split[1], 10)
 		};
 
-	console.log(data);
+	buffer.push(data);
 }
 
 function sendData(data) {
