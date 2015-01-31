@@ -1,0 +1,30 @@
+[{
+	"type": "userCount",
+	"ts": "2015-01-31 18:45:00",
+	"count": 22967
+}, {
+	"type": "start",
+	"ts": "2015-01-31 18:45:00"
+}, {
+	"type": "userCount",
+	"ts": "2015-01-31 18:45:02",
+	"count": 22968
+}, {
+	"type": "userCount",
+	"ts": "2015-01-31 18:45:02",
+	"count": 22969
+}, {
+	"type": "light",
+	"ts": "2015-01-31 18:45:03",
+	"group": "1",
+	"body": {
+		"brightness": 128
+	}
+}, {
+	"type": "light",
+	"ts": "2015-01-31 18:45:07",
+	"group": "1",
+	"body": {
+		"brightness": 150
+	}
+}]
