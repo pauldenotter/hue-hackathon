@@ -11,7 +11,7 @@ module.exports = function(client) {
 
 	client.on('data', receive);
 
-	c.write('Hackathoooon\r\n');
+	client.write('Hackathoooon\r\n');
 };
 
 function receive(data) {
