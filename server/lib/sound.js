@@ -14,6 +14,12 @@ module.exports = function(client) {
 	client.write('Hackathoooon\r\n');
 };
 
-function receive(data) {
+function receive(buffer) {
+	var split = buffer.toString().split(';'),
+		data = {
+			avg: split[0],
+			peak: split[1]
+		};
+
 	console.log(data);
 }
