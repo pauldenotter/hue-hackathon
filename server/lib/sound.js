@@ -27,6 +27,9 @@ function receive(incomingBuffer) {
 }
 
 function sendData(data) {
+	if (!(data typeof String))
+		data = (data instanceof Object) ? JSON.stringify(data) : data + '';
+
 	clients.forEach(function(client) {
 		client.write(data);
 	});
