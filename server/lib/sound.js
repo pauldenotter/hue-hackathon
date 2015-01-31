@@ -17,8 +17,8 @@ module.exports = function(client) {
 function receive(buffer) {
 	var split = buffer.toString().split(';'),
 		data = {
-			avg: split[0],
-			peak: split[1]
+			avg: parseFloat(split[0], 10),
+			peak: parseFloat(split[1], 10)
 		};
 
 	console.log(data);
