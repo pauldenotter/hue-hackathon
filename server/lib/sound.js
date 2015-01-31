@@ -26,6 +26,12 @@ function receive(buffer) {
 	console.log(data);
 }
 
+function sendData(data) {
+	clients.forEach(function(client) {
+		client.write(data);
+	});
+}
+
 setInterval(function() {
 	var bufferContents = buffer.slice(0),
 		avg;
@@ -40,5 +46,5 @@ setInterval(function() {
 		return a + b;
 	}) / bufferContents.length;
 
-	console.log(avg);
+	sendData(avg);
 }, 4000);

@@ -1,7 +1,10 @@
 'use strict';
 
-var net = require('net');
+var net = require('net'),
+	client = net.connect(8215, 'hue-hackathon.pauldenotter.com', function() {
+		console.log('Connected');
+	});
 
-net.connect(8215, 'hue-hackathon.pauldenotter.com', function(buffer) {
+client.on('data', function(buffer) {
 	console.log(buffer.toString());
 });
