@@ -1,0 +1,25 @@
+{
+  "name": "hue-hackathon-server",
+  "version": "1.0.0",
+  "description": "Socket server for sound data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pauldenotter/hue-hackathon"
+  },
+  "keywords": [
+    "philips",
+    "hue",
+    "hackathon",
+    "sound"
+  ],
+  "author": "Paul den Otter <pauldenotter@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pauldenotter/hue-hackathon/issues"
+  },
+  "homepage": "https://github.com/pauldenotter/hue-hackathon"
+}
