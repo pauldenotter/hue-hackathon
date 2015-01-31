@@ -8,7 +8,6 @@
 
 
 
-
 #import <Foundation/Foundation.h>
 
 #define SOCKET_URL @"hue-hackathon.pauldenotter.com"
@@ -17,6 +16,8 @@
 @interface SocketController : NSObject <NSStreamDelegate>
 
 - (id)init;
+- (void)open;
+- (void)close;
 - (void)send:(NSString *)input;
 
 

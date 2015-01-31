@@ -60,11 +60,13 @@
     if(self.isStarted)
     {
         [self.button setTitle:@"START" forState:UIControlStateNormal];
+        [self.socketController close];
         self.isStarted = false;
     }
     else
     {
         [self.button setTitle:@"STOP" forState:UIControlStateNormal];
+        [self.socketController open];
         self.isStarted = true;
     }
 }

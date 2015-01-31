@@ -29,12 +29,20 @@ NSOutputStream *outputStream;
     [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     
-    [inputStream open];
-    [outputStream open];
-    
     return self;
 }
 
+- (void)open
+{
+    [inputStream open];
+    [outputStream open];
+}
+
+- (void)close
+{
+    [inputStream close];
+    [outputStream close];
+}
 
 - (void)send:(NSString *)input
 {
