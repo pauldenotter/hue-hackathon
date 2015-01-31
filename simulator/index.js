@@ -5,29 +5,31 @@ var net = require('net'),
 	port = 1230;
 
 net.createServer(function(client) {
+	console.log('client connected');
 	var ts = new Date(),
 		events = Array.prototype.slice.call(matchEvents, 0),
-		diff = ts.getTime() - clientEvents[0].ts.getTime(),
+		diff = ts.getTime() - (new Date(events[0].ts)).getTime(),
 		interval;
 
-	if (!clientEvents.length) return;
+	if (!events.length) return;
 
 	client.on('error', function(err) {
 		console.error(err);
 	});
 
-	var interval = setInterval(function() {
+	interval = setInterval(function() {
 		var event;
 
-		while (events[0].ts <= (new Date()).getTime() - diff) {
+		while ((new Date(events[0].ts)).getTime() <= (new Date()).getTime() - diff) {
 			event = events.shift();
 			console.log(event);
+			client.write(JSON.stringify(event) + '\r\n');
+			if (!events.length) {
+				clearInterval(interval);
+				break;
+			}
 		}
 	}, 250)
-
-	clientEvents.foreach(function(event) {
-		client.write(JSON.stringify(event));
-	});
 }).listen(port, function() {
 	console.log('listening on port', port);
 });
