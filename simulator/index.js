@@ -3,17 +3,18 @@
 var net = require('net'),
 	matchEvents = require('./events.json'),
 	port = 1230,
-	clients = [];
+	clients = [],
+	interval;
 
 net.createServer(function(client) {
 	console.log('client connected');
 	clients.push(client);
+	clearInterval(interval);
 
 	var ts = new Date(),
 		events = Array.prototype.slice.call(matchEvents, 0),
 		totalTime = (new Date(events[events.length-1])).getTime() - (new Date(events[0].ts)).getTime(),
-		diff = ts.getTime() - (new Date(events[0].ts)).getTime(),
-		interval;
+		diff = ts.getTime() - (new Date(events[0].ts)).getTime();
 
 	if (!events.length) return;
 
@@ -33,7 +34,9 @@ net.createServer(function(client) {
 
 			if (!event.percentage) event.percentage = ((new Date()).getTime() - diff) * 100 / totalTime;
 
-			client.write(JSON.stringify(event) + '\r\n');
+			clients.forEach(function(client) {
+				clients.write(JSON.stringify(event) + '\r\n');
+			});
 			if (!events.length) {
 				clearInterval(interval);
 				break;
