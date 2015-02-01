@@ -30,7 +30,7 @@ net.createServer(function(client) {
 		while ((new Date(events[0].ts)).getTime() <= (new Date()).getTime() - diff) {
 			event = events.shift();
 			console.log(event);
-console.log((new Date()).getTime() - diff));
+
 			if (!event.percentage) event.percentage = ((new Date()).getTime() - diff) * 100 / totalTime;
 
 			client.write(JSON.stringify(event) + '\r\n');
