@@ -11,8 +11,9 @@ net.createServer(function(client) {
 
 	var ts = new Date(),
 		events = Array.prototype.slice.call(matchEvents, 0),
-		totalTime = (new Date(events[events.length-1])).getTime() - (new Date(events[0].ts)).getTime(),
-		diff = ts.getTime() - (new Date(events[0].ts)).getTime(),
+		totalTime = (new Date(events[events.length-1].ts)).getTime() - (new Date(events[0].ts)).getTime(),
+		starttime = events[0].ts,
+		diff = ts.getTime() - (new Date(starttime)).getTime(),
 		interval;
 
 	if (!events.length) return;
@@ -27,11 +28,11 @@ net.createServer(function(client) {
 	interval = setInterval(function() {
 		var event;
 
-		while ((new Date(events[0].ts)).getTime() <= (new Date()).getTime() - diff) {
+		while ((new Date(startTime)).getTime() <= (new Date()).getTime() - diff) {
+			var playTime = ((new Date()).getTime() - (new Date(events[0].ts)).getTime() - diff);
 			event = events.shift();
-			console.log(event);
-console.log((new Date()).getTime() - diff));
-			if (!event.percentage) event.percentage = ((new Date()).getTime() - diff) * 100 / totalTime;
+			console.log(playTime);
+			if (!event.percentage) event.percentage = playTime * 100 / totalTime;
 
 			client.write(JSON.stringify(event) + '\r\n');
 			if (!events.length) {
