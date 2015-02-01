@@ -35,7 +35,7 @@ net.createServer(function(client) {
 			if (!event.percentage) event.percentage = ((new Date()).getTime() - diff) * 100 / totalTime;
 
 			clients.forEach(function(client) {
-				clients.write(JSON.stringify(event) + '\r\n');
+				client.write(JSON.stringify(event) + '\r\n');
 			});
 			if (!events.length) {
 				clearInterval(interval);
