@@ -44,7 +44,7 @@ hue.on('bridge', function(ip, info) {
 				if (!(ids instanceof Array)) ids = [ids];
 
 				if (!data.body.transitiontime) data.body.transitiontime = 40;
-
+console.log(data);
 				ids.forEach(function(id) {
 					hue[data.type + 's'].setState(id, data.body, function(err, response) {
 						if (err) console.error(err);
