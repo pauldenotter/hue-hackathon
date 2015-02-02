@@ -52,5 +52,7 @@ UIColor *UIColorDefaultForColorInProgressLabelColorTableKey(ProgressLabelColorTa
 -(void)setProgress:(CGFloat)progress;
 -(void)setProgress:(CGFloat)progress timing:(TPPropertyAnimationTiming)timing duration:(CGFloat) duration delay:(CGFloat)delay;
 
+- (void)drawLineAtAngle:(float)angle inRect:(CGRect)rect;
+
 
 @end

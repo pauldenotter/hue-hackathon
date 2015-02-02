@@ -50,7 +50,8 @@ NSOutputStream *outputStream;
     [outputStream write:[data bytes] maxLength:[data length]];
 }
 
-- (void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent {
+- (void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent
+{
     
     switch (streamEvent) {
             
@@ -67,12 +68,14 @@ NSOutputStream *outputStream;
                 while ([inputStream hasBytesAvailable])
                 {
                     len = [inputStream read:buffer maxLength:sizeof(buffer)];
-                    if (len > 0) {
-                        
+                    if (len > 0)
+                    {
                         NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
                         
-                        if (nil != output) {
+                        if (nil != output)
+                        {
                             NSLog(@"server said: %@", output);
+                            [self messageReceived:output];
                         }
                     }
                 }

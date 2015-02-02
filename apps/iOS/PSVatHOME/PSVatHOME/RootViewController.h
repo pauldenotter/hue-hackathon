@@ -13,15 +13,16 @@
 #import "BackgroundGradient.h"
 #import "SocketController.h"
 
-
+#import "MGSlidePanels.h"
 
 @interface RootViewController : UIViewController <SocketControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *teamView;
 @property (weak, nonatomic) IBOutlet KAProgressLabel *progress;
-- (IBAction)slider:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
 @property (nonatomic, strong) SocketController *socketController;
 
+- (IBAction)menuButton:(id)sender;
 
 @end
 

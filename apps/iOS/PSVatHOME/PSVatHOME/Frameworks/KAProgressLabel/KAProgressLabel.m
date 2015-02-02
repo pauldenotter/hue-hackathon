@@ -269,11 +269,30 @@ UIColor *UIColorDefaultForColorInProgressLabelColorTableKey(ProgressLabelColorTa
     
 }
 
--(CGRect)rectForCircle:(CGRect)rect {
+-(CGRect)rectForCircle:(CGRect)rect
+{
     CGFloat minDim = MIN(self.bounds.size.width, self.bounds.size.height);
     CGFloat circleRadius = (minDim / 2) - (_backBorderWidth);
     CGPoint circleCenter = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
     return CGRectMake(circleCenter.x - circleRadius, circleCenter.y - circleRadius, 2 * circleRadius, 2 * circleRadius);
+}
+
+- (void)drawLineAtAngle:(float)angle inRect:(CGRect)rect
+{
+    UIColor *fillColor = self.colorTable[@"fillColor"];
+    
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, 0.0, 0.0);
+    
+    CGContextSetStrokeColorWithColor(context, fillColor.CGColor);
+    CGContextSetLineWidth(context, 10);
+    CGContextMoveToPoint(context, rect.size.width/2, rect.size.height/2);
+    
+    CGContextAddLineToPoint(context, (rect.size.width/2) + ((rect.size.width/2) * (cos((angle)*(M_PI/180)))),(rect.size.height/2) + ((rect.size.width/2) * (sin((angle)*(M_PI/180)))));
+    
+    
+    CGContextStrokePath(context);
 }
 
 @end

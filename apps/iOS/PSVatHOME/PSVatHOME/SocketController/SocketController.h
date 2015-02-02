@@ -18,7 +18,7 @@
 @end
 
 #define SOCKET_URL @"hue-hackathon.pauldenotter.com"
-#define SOCKET_PORT 8215
+#define SOCKET_PORT 1230
 
 @interface SocketController : NSObject <NSStreamDelegate>
 
